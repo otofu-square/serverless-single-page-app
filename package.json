@@ -9,6 +9,7 @@
   },
   "devDependencies": {
     "@types/aws-lambda": "^0.0.14",
+    "@types/node": "^8.0.6",
     "@types/react": "^15.0.33",
     "@types/react-dom": "^15.5.1",
     "awesome-typescript-loader": "^3.2.1",
@@ -18,6 +19,7 @@
     "serverless-plugin-typescript": "^0.4.0",
     "source-map-loader": "^0.2.1",
     "typescript": "^2.4.1",
+    "url-loader": "^0.5.9",
     "webpack": "^3.0.0"
   },
   "dependencies": {
