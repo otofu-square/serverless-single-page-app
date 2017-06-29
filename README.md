@@ -8,8 +8,11 @@ React SPA powered by Server⚡️less Framework which inspired by this awesome b
 $ yarn install
 
 # Deploy
-$ yarn deploy
+$ yarn run deploy
 
 # Open this app in browser (Only MacOS)
-$ yarn open
+$ yarn run open
+
+# Remove app from AWS completely
+$ yarn run remove
 ```
