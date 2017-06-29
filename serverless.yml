@@ -7,7 +7,12 @@ provider:
 
 functions:
   hello:
-    handler: src/handler.hello
+    handler: src/functions/handler.hello
+
+custom:
+  client:
+    bucketName: serverless-single-page-app-assets
 
 plugins:
   - serverless-plugin-typescript
+  - serverless-client-s3
