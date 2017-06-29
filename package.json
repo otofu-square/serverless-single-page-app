@@ -2,6 +2,9 @@
   "name": "serverless-single-page-app",
   "version": "0.0.1",
   "repository": "ssh://git@github.com/otofu-square/serverless-single-page-app.git",
+  "scripts": {
+    "deploy": "sls deploy"
+  },
   "devDependencies": {
     "@types/aws-lambda": "^0.0.14",
     "serverless": "^1.16.1",
