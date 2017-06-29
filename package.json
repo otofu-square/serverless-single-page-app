@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "repository": "ssh://git@github.com/otofu-square/serverless-single-page-app.git",
   "scripts": {
-    "deploy": "sls deploy"
+    "deploy": "sls deploy && sls client deploy",
+    "remove": "sls remove && aws s3 rb s3://serverless-single-page-app-assets"
   },
   "devDependencies": {
     "@types/aws-lambda": "^0.0.14",
