@@ -59,3 +59,6 @@ typings/
 
 # Serverless directories
 .serverless
+
+# Direnv template
+!.envrc.skeleton
