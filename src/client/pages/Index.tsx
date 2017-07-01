@@ -11,7 +11,7 @@ const Index = () =>
           </a>
         </div>
         <div className="one-half column">
-          <img src={require('./assets/HeroImage.jpg')} />
+          <img src={require('../assets/HeroImage.jpg')} />
         </div>
       </div>
     </div>
