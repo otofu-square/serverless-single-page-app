@@ -1,19 +1,16 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 
 const Index = () =>
-  <div className="markup">
-    <div className="view-container container">
-      <div className="row">
-        <div className="one-half column">
-          <h3>Learn JavaScript, one puzzle at a time.</h3>
-          <a href="" className="button button-primary">
-            Start Now!
-          </a>
-        </div>
-        <div className="one-half column">
-          <img src={require('../assets/HeroImage.jpg')} />
-        </div>
-      </div>
+  <div className="row">
+    <div className="one-half column">
+      <h3>Learn JavaScript, one puzzle at a time.</h3>
+      <Link to="/problem/:id" className="button button-primary">
+        Start Now!
+      </Link>
+    </div>
+    <div className="one-half column">
+      <img src={require('../assets/HeroImage.jpg')} />
     </div>
   </div>;
 
