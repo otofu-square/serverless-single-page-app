@@ -16,6 +16,11 @@
     "@types/react-router-redux": "^5.0.3",
     "awesome-typescript-loader": "^3.2.1",
     "html-webpack-plugin": "^2.29.0",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-router-dom": "^4.1.1",
+    "react-router-redux": "^4.0.8",
+    "redux": "^3.7.1",
     "serverless": "^1.16.1",
     "serverless-client-s3": "git+ssh://git@github.com/serverless/serverless-client-s3.git#master",
     "serverless-plugin-typescript": "^0.4.0",
@@ -23,12 +28,5 @@
     "typescript": "^2.4.1",
     "url-loader": "^0.5.9",
     "webpack": "^3.0.0"
-  },
-  "dependencies": {
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
-    "react-router-dom": "^4.1.1",
-    "react-router-redux": "^4.0.8",
-    "redux": "^3.7.1"
   }
 }
