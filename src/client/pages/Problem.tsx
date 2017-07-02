@@ -1,8 +1,20 @@
 import * as React from 'react';
 
-const Problem = () =>
-  <div className="problem-view">
-    <h1>Coming soon!</h1>
-  </div>;
+import { IProblem } from '../models/problem';
 
-export default Problem;
+export interface Props extends IProblem {
+  id: number;
+}
+
+export const Problem = ({ id, description, code }: Props) =>
+  <div className="problem-view">
+    <h1>
+      Problem #{id} Coming soon!
+    </h1>
+    <p>
+      {description}
+    </p>
+    <p>
+      {code}
+    </p>
+  </div>;

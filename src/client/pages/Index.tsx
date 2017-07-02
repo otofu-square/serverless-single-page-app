@@ -5,7 +5,7 @@ const Index = () =>
   <div className="row">
     <div className="one-half column">
       <h3>Learn JavaScript, one puzzle at a time.</h3>
-      <Link to="/problem/:id" className="button button-primary">
+      <Link to="/problem/1" className="button button-primary">
         Start Now!
       </Link>
     </div>
