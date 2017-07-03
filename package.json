@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "repository": "ssh://git@github.com/otofu-square/serverless-single-page-app.git",
   "scripts": {
+    "start": "webpack-dev-server",
     "deploy": "webpack && sls deploy && sls client deploy",
     "remove": "sls remove && aws s3 rb s3://serverless-single-page-app-assets --force",
     "open": "open http://s3-ap-northeast-1.amazonaws.com/serverless-single-page-app-assets/index.html"
