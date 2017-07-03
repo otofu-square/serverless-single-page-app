@@ -8,6 +8,12 @@ module.exports = {
     // Directory /client/dist is used by serverless-client-s3
     path: __dirname + '/client/dist',
   },
+  devtool: 'source-map',
+  devServer: {
+    contentBase: 'client',
+    port: 3000,
+    inline: true,
+  },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.json'],
   },
