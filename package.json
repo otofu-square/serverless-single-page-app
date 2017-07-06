@@ -26,6 +26,7 @@
     "react-router-dom": "^4.1.1",
     "react-router-redux": "next",
     "redux": "^3.7.1",
+    "redux-thunk": "^2.2.0",
     "serverless": "^1.16.1",
     "serverless-client-s3": "git+ssh://git@github.com/serverless/serverless-client-s3.git#master",
     "serverless-plugin-typescript": "0.5.0",
