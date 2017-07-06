@@ -12,12 +12,14 @@
     "@types/aws-lambda": "^0.0.14",
     "@types/history": "^4.6.0",
     "@types/node": "^8.0.6",
+    "@types/ramda": "^0.24.2",
     "@types/react": "^15.0.33",
     "@types/react-dom": "^15.5.1",
     "@types/react-redux": "^4.4.45",
     "@types/react-router-dom": "^4.0.5",
     "@types/react-router-redux": "next",
     "awesome-typescript-loader": "^3.2.1",
+    "file-loader": "^0.11.2",
     "history": "^4.6.3",
     "html-webpack-plugin": "^2.29.0",
     "react": "^15.6.1",
@@ -35,5 +37,8 @@
     "url-loader": "^0.5.9",
     "webpack": "^3.0.0",
     "webpack-dev-server": "^2.5.0"
+  },
+  "dependencies": {
+    "ramda": "^0.24.1"
   }
 }
