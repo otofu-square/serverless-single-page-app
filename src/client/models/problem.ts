@@ -1,4 +1,4 @@
-export interface IProblem {
+export interface Problem {
   description: string;
   code: string;
 }
