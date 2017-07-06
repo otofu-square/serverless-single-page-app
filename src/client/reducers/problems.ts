@@ -1,17 +1,8 @@
-import { IProblem } from '../models/problem';
+import { problemsState } from '../models/state';
 
 import { Reducer, Action } from 'redux';
 
-export interface State {
-  problems: Array<IProblem>;
-}
-
-interface IAction extends Action {
-  type: string;
-  payload: object;
-}
-
-const initialState: State = {
+const initialState: problemsState = {
   problems: [
     {
       description: 'What is truth?',
@@ -24,12 +15,14 @@ const initialState: State = {
   ],
 };
 
-export const problemsReducer = (
-  state: State = initialState,
-  action: IAction,
-) => {
+const reducer = (
+  state: problemsState = initialState,
+  action: Action,
+): problemsState => {
   switch (action.type) {
     default:
       return state;
   }
 };
+
+export default reducer;
