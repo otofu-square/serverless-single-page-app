@@ -3,30 +3,42 @@
   "version": "0.0.1",
   "repository": "ssh://git@github.com/otofu-square/serverless-single-page-app.git",
   "scripts": {
+    "start": "webpack-dev-server",
     "deploy": "webpack && sls deploy && sls client deploy",
     "remove": "sls remove && aws s3 rb s3://serverless-single-page-app-assets --force",
     "open": "open http://s3-ap-northeast-1.amazonaws.com/serverless-single-page-app-assets/index.html"
   },
   "devDependencies": {
     "@types/aws-lambda": "^0.0.14",
+    "@types/history": "^4.6.0",
     "@types/node": "^8.0.6",
+    "@types/ramda": "^0.24.2",
     "@types/react": "^15.0.33",
     "@types/react-dom": "^15.5.1",
+    "@types/react-redux": "^4.4.45",
     "@types/react-router-dom": "^4.0.5",
-    "@types/react-router-redux": "^5.0.3",
+    "@types/react-router-redux": "next",
     "awesome-typescript-loader": "^3.2.1",
+    "file-loader": "^0.11.2",
+    "history": "^4.6.3",
     "html-webpack-plugin": "^2.29.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
+    "react-redux": "^5.0.5",
     "react-router-dom": "^4.1.1",
-    "react-router-redux": "^4.0.8",
+    "react-router-redux": "next",
     "redux": "^3.7.1",
+    "redux-thunk": "^2.2.0",
     "serverless": "^1.16.1",
     "serverless-client-s3": "git+ssh://git@github.com/serverless/serverless-client-s3.git#master",
-    "serverless-plugin-typescript": "^0.4.0",
+    "serverless-plugin-typescript": "0.5.0",
     "source-map-loader": "^0.2.1",
     "typescript": "^2.4.1",
     "url-loader": "^0.5.9",
-    "webpack": "^3.0.0"
+    "webpack": "^3.0.0",
+    "webpack-dev-server": "^2.5.0"
+  },
+  "dependencies": {
+    "ramda": "^0.24.1"
   }
 }

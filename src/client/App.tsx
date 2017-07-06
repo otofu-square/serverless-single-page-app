@@ -1,19 +1,23 @@
 import * as React from 'react';
-import { HashRouter, Route, Switch } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { Route, Switch } from 'react-router-dom';
+import { ConnectedRouter } from 'react-router-redux';
+import createHistory from 'history/createHashHistory';
 
 import Index from './pages/Index';
-import Problem from './pages/Problem';
+import Problem from './containers/ProblemDetail';
+import { history } from './store';
 
 const App = () =>
-  <div className="markup">
-    <div className="view-container container">
-      <HashRouter>
+  <ConnectedRouter history={history}>
+    <div className="markup">
+      <div className="view-container container">
         <Switch>
-          <Route exact path="/" component={Index} />
-          <Route path="/problem/:id" component={Problem} />
+          <Route exact path="/" component={Index as any} />
+          <Route path="/problem/:id" component={Problem as any} />
         </Switch>
-      </HashRouter>;
+      </div>
     </div>
-  </div>;
+  </ConnectedRouter>;
 
 export default App;
