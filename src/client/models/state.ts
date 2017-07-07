@@ -6,8 +6,8 @@ export interface appState {
 }
 
 export interface problemPreviewState {
-  problem: Problem | null;
-  message: string | null;
+  textarea: string;
+  message: string;
 }
 
 export interface GlobalState {
