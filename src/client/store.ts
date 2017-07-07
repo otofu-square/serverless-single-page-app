@@ -3,15 +3,20 @@ import { default as thunk } from 'redux-thunk';
 import createHistory from 'history/createHashHistory';
 import { routerReducer, routerMiddleware } from 'react-router-redux';
 
-import problemsReducer from './reducers/problems';
+import appReducer from './reducers/app';
+import problemPreviewReducer from './reducers/problemPreview';
+
+export const history = createHistory();
 
 const reducer = combineReducers({
-  problems: problemsReducer,
+  app: appReducer,
+  problemPreview: problemPreviewReducer,
   router: <any>routerReducer,
 });
 
-export const history = createHistory();
-export const store = createStore(
-  reducer,
-  compose(applyMiddleware(thunk), applyMiddleware(routerMiddleware(history))),
+const middleware = compose(
+  applyMiddleware(thunk),
+  applyMiddleware(routerMiddleware(history)),
 );
+
+export const store = createStore(reducer, middleware);
