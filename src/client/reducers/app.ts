@@ -1,12 +1,7 @@
 import { repeat } from 'ramda';
 
 import { appState } from '../models/state';
-import {
-  CHECK_ANSWER_REQUEST,
-  CHECK_ANSWER_FAILURE,
-  CHECK_ANSWER_SUCCESS,
-  IAction,
-} from '../actions/problem';
+import { CHECK_ANSWER_SUCCESS, IAction } from '../actions/problemPreview';
 
 const initialState: appState = {
   problems: [
@@ -26,12 +21,11 @@ const initialState: appState = {
 
 const reducer = (state: appState = initialState, action: IAction): appState => {
   switch (action.type) {
-    case CHECK_ANSWER_REQUEST:
-      return state;
-    case CHECK_ANSWER_FAILURE:
-      return state;
     case CHECK_ANSWER_SUCCESS:
-      return state;
+      return {
+        ...state,
+        solvedStatus: [...state.solvedStatus, action.payload.problemId],
+      };
     default:
       return state;
   }
