@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 
+import { appState } from '../models/state';
+
 const Index = () =>
   <div className="row">
     <div className="one-half column">
