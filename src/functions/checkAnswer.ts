@@ -1,6 +1,6 @@
 import { APIGatewayEvent, Context, Callback } from 'aws-lambda';
 
-export const hello = (
+export const process = (
   event: APIGatewayEvent,
   context: Context,
   callback: Callback,
