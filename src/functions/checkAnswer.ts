@@ -1,16 +1,26 @@
 import { APIGatewayEvent, Context, Callback } from 'aws-lambda';
+import { compose, replace } from 'ramda';
+
+interface EventBody {
+  source: string;
+  answer: string;
+}
+
+const toJson = (body: string): EventBody => JSON.parse(body);
+const toImmediateFunc = (code: string) => `(${code})()`;
+const checkAnswer = (answer: string) =>
+  compose(eval, toImmediateFunc, replace('__', answer));
 
 export const process = (
   event: APIGatewayEvent,
   context: Context,
   callback: Callback,
 ): void => {
+  const { source, answer } = toJson(event.body!);
+  const result = checkAnswer(answer)(source);
   const response = {
     statusCode: 200,
-    body: JSON.stringify({
-      message: 'Go Serverless v1.0! Your function executed successfully!',
-      input: event,
-    }),
+    body: JSON.stringify({ result }),
   };
   callback(undefined, response);
 };
