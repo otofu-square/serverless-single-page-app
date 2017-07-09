@@ -20,6 +20,7 @@ export const process = (
   const result = checkAnswer(answer)(source);
   const response = {
     statusCode: 200,
+    headers: { 'Access-Control-Allow-Origin': '*' },
     body: JSON.stringify({ result }),
   };
   callback(undefined, response);

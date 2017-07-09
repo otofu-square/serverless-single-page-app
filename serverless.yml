@@ -12,6 +12,7 @@ functions:
       - http:
           path: /checkAnswer
           method: post
+          cors: true
 
 custom:
   client:
