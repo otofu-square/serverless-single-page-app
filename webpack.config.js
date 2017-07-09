@@ -28,5 +28,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'src/client/assets/index.html',
     }),
+    new webpack.DefinePlugin({
+      'process.env.LAMBDA_ROOT_ENDPOINT': JSON.stringify(
+        process.env.LAMBDA_ROOT_ENDPOINT,
+      ),
+    }),
   ],
 };

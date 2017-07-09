@@ -6,3 +6,6 @@ export AWS_DEFAULT_OUTPUT=json
 
 # Serverless Framework
 export STAGE=dev
+
+# Root Endpoint of Lambda Functions
+export LAMBDA_ROOT_ENDPOINT={Root Endpoint of Lambda Functions}
