@@ -2,6 +2,7 @@ import { Dispatch } from 'redux';
 import { compose, replace } from 'ramda';
 
 import { Problem } from '../models/problem';
+import { LAMBDA_ROOT_ENDPOINT } from '../../shared/config';
 
 export const UPDATE_TEXTAREA = 'UPDATE_TEXTAREA';
 export const CHECK_ANSWER_REQUEST = 'CHECK_ANSWER_REQUEST';
@@ -48,12 +49,24 @@ const checkAnswerSuccess = (problemId: number) => ({
 export const checkAnswer = (problem: Problem, answer: string) => async (
   dispatch: Dispatch<{}>,
 ) => {
+  const endpoint = `${LAMBDA_ROOT_ENDPOINT}/checkAnswer`;
+  const config = {
+    method: 'POST',
+    body: JSON.stringify({
+      source: problem.code,
+      answer,
+    }),
+  };
   dispatch(checkAnswerRequest());
-  const toImmediateFunc = (code: string) => `(${code})()`;
-  const execCode = compose(eval, toImmediateFunc, replace('__', answer));
-  if (execCode(problem.code)) {
-    dispatch(checkAnswerSuccess(problem.id));
-  } else {
-    dispatch(checkAnswerFailure('Your answer is not correct.'));
+  try {
+    const response = await fetch(endpoint, config);
+    const json = await response.json();
+    if (json.result === true) {
+      dispatch(checkAnswerSuccess(problem.id));
+    } else {
+      dispatch(checkAnswerFailure('Your answer is not correct.'));
+    }
+  } catch (e) {
+    dispatch(checkAnswerFailure('System Error.'));
   }
 };
