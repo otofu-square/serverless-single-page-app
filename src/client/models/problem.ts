@@ -7,4 +7,7 @@ export interface Problem {
 }
 
 export const getProblemById = (problems: Problem[], id: number) =>
-  head(filter((p: Problem) => p.id === id, problems));
+  pipe<Problem[], Problem[], Problem>(
+    filter((p: Problem) => p.id === id),
+    head,
+  )(problems);
