@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Link } from 'react-router-dom';
 
 import { Problem } from '../models/problem';
+import Toolbar from '../components/Toolbar';
 
 export interface Props extends Problem {
   textarea: string;

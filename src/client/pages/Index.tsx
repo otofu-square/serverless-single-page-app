@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Link } from 'react-router-dom';
 
 import { appState } from '../models/state';
+import Toolbar from '../components/Toolbar';
 
 const Index = () =>
   <div className="row">

@@ -6,11 +6,13 @@ import createHistory from 'history/createHashHistory';
 
 import Index from './containers/Index';
 import Problem from './containers/ProblemPreview';
+import Toolbar from './components/Toolbar';
 import { history } from './store';
 
 const App = () =>
   <ConnectedRouter history={history}>
     <div className="markup">
+      <Toolbar />
       <div className="view-container container">
         <Switch>
           <Route exact path="/" component={Index as any} />
