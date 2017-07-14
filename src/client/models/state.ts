@@ -1,10 +1,16 @@
 import { Problem } from './problem';
 
-export interface problemsState {
-  problems: Array<Problem>;
+export interface appState {
+  problems: Problem[];
+  solvedStatus: number[];
+}
+
+export interface problemPreviewState {
+  textarea: string;
+  message: string;
 }
 
 export interface GlobalState {
-  problems: problemsState;
-  router: any;
+  app: appState;
+  problemPreview: problemPreviewState;
 }

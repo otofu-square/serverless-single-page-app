@@ -6,8 +6,13 @@ provider:
   region: ap-northeast-1
 
 functions:
-  hello:
-    handler: src/functions/handler.hello
+  checkAnswer:
+    handler: src/functions/checkAnswer.process
+    events:
+      - http:
+          path: /checkAnswer
+          method: post
+          cors: true
 
 custom:
   client:

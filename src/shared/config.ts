@@ -1,0 +1,1 @@
+export const LAMBDA_ROOT_ENDPOINT = process.env.LAMBDA_ROOT_ENDPOINT;
