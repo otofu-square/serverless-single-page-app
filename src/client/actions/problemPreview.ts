@@ -1,10 +1,12 @@
 import { Dispatch } from 'redux';
 import { compose, replace } from 'ramda';
+import { push } from 'react-router-redux';
 
 import { Problem } from '../models/problem';
 import { LAMBDA_ROOT_ENDPOINT } from '../../shared/config';
 
 export const UPDATE_TEXTAREA = 'UPDATE_TEXTAREA';
+export const RESET_PREVIEW = 'RESET_PREVIEW';
 export const CHECK_ANSWER_REQUEST = 'CHECK_ANSWER_REQUEST';
 export const CHECK_ANSWER_FAILURE = 'CHECK_ANSWER_FAILURE';
 export const CHECK_ANSWER_SUCCESS = 'CHECK_ANSWER_SUCCESS';
@@ -14,6 +16,7 @@ export interface IActions {
     type: typeof UPDATE_TEXTAREA;
     payload: { textarea: string };
   };
+  RESET_PREVIEW: { type: typeof RESET_PREVIEW };
   CHECK_ANSWER_REQUEST: { type: typeof CHECK_ANSWER_REQUEST };
   CHECK_ANSWER_FAILURE: {
     type: typeof CHECK_ANSWER_FAILURE;
@@ -30,6 +33,10 @@ export type IAction = IActions[keyof IActions];
 export const updateTextarea = (textarea: string) => ({
   type: UPDATE_TEXTAREA as typeof UPDATE_TEXTAREA,
   payload: { textarea },
+});
+
+export const resetPreview = () => ({
+  type: RESET_PREVIEW as typeof RESET_PREVIEW,
 });
 
 const checkAnswerRequest = () => ({
@@ -69,4 +76,11 @@ export const checkAnswer = (problem: Problem, answer: string) => async (
   } catch (e) {
     dispatch(checkAnswerFailure('System Error.'));
   }
+};
+
+export const nextProblem = (nextProblemId: number) => (
+  dispatch: Dispatch<{}>,
+) => {
+  dispatch(resetPreview());
+  dispatch(push(`/problem/${nextProblemId}`));
 };
