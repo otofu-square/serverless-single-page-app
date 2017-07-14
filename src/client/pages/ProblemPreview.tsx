@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 
 import { Problem } from '../models/problem';
 
@@ -48,6 +49,14 @@ const ProblemDetail = ({
         >
           Check Answer
         </button>
+        {message === 'Congratulation!!'
+          ? <Link
+              to={`/problem/${id + 1}`}
+              className="btn button-primary check-btn"
+            >
+              Next Problem
+            </Link>
+          : null}
         <p className="result" />
       </div>
     </form>
