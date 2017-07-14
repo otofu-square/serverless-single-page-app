@@ -7,6 +7,7 @@ import { GlobalState } from '../models/state';
 import {
   updateTextarea,
   checkAnswer,
+  nextProblem,
   IAction,
 } from '../actions/problemPreview';
 import ProblemPreview from '../pages/ProblemPreview';
@@ -31,6 +32,7 @@ const mapDispatchToProps = (dispatch: Dispatch<{}>) => ({
   onChangeTextarea: (text: string) => dispatch(updateTextarea(text)),
   onClick: (problem: Problem, answer: string) =>
     dispatch(checkAnswer(problem, answer)),
+  nextProblem: (nextProblemId: number) => dispatch(nextProblem(nextProblemId)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProblemPreview);
