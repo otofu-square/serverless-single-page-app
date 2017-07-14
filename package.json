@@ -33,6 +33,7 @@
     "serverless-client-s3": "git+ssh://git@github.com/serverless/serverless-client-s3.git#master",
     "serverless-plugin-typescript": "0.5.0",
     "source-map-loader": "^0.2.1",
+    "styled-components": "^2.1.1",
     "typescript": "^2.4.1",
     "url-loader": "^0.5.9",
     "webpack": "^3.0.0",
