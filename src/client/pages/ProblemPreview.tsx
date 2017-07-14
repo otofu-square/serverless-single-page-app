@@ -8,6 +8,7 @@ export interface Props extends Problem {
   message: string;
   onChangeTextarea: Function;
   onClick: Function;
+  nextProblem: Function;
 }
 
 const ProblemDetail = ({
@@ -18,6 +19,7 @@ const ProblemDetail = ({
   message,
   onChangeTextarea,
   onClick,
+  nextProblem,
 }: Props) =>
   <div className="problem-view">
     <h3 className="title">
@@ -50,12 +52,12 @@ const ProblemDetail = ({
           Check Answer
         </button>
         {message === 'Congratulation!!'
-          ? <Link
-              to={`/problem/${id + 1}`}
+          ? <button
               className="btn button-primary check-btn"
+              onClick={() => nextProblem(id + 1)}
             >
               Next Problem
-            </Link>
+            </button>
           : null}
         <p className="result" />
       </div>
